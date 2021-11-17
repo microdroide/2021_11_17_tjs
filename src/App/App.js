@@ -9,6 +9,11 @@ class App extends React.Component {
     this.state = { counter: 0, value2: 0 };
   }
 
+  componentDidUpdate(){
+    console.log(arguments);
+    console.log('le changement est pret et effectif', this.state.counter);
+  }
+
   render() {
     return (
       <div className="App">
