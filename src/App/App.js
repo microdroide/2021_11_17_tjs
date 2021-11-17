@@ -9,6 +9,9 @@ class App extends React.Component {
     this.state = { counter: 0, value2: 0 };
   }
 
+  /**
+   * Cycle de vie avec didUpdate
+   */
   componentDidUpdate(){
     console.log(arguments);
     console.log('%c%s','color:red','le changement est pret et effectif', this.state.counter);
