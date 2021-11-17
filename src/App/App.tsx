@@ -9,6 +9,7 @@ function App() {
     <div className="App">
       <p>HELLO WORLD !</p>
       <Button/>        
+      <Button/>
     </div>
   );
 }
