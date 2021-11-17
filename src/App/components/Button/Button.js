@@ -17,7 +17,13 @@ const Button = (props) => {
   return <button 
   className={ `${style.Button}${clicked.state?' '+style.clicked:''}` }
   style={{backgroundColor:props.bgColor,color:props.color}} 
-  onClick={ (evt)=>{props.onButtonClicked()} }>{props.text}</button>;
+  onClick={ (evt)=>{
+    
+    setclicked({...clicked, state: true});
+
+    setTimeout( () => setclicked({...clicked, state: false}));
+
+    props.onButtonClicked()} }>{props.text}</button>;
 };
 
 Button.propTypes={
