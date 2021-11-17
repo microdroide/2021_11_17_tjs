@@ -11,7 +11,7 @@ class App extends React.Component {
 
   componentDidUpdate(){
     console.log(arguments);
-    console.log('le changement est pret et effectif', this.state.counter);
+    console.log('%c%s','color:red','le changement est pret et effectif', this.state.counter);
   }
 
   render() {
