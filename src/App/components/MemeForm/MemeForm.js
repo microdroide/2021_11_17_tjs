@@ -24,7 +24,7 @@ function MemeForm(props) {
             placeholder="saisir titre"
             value={props.meme.titre}
             onChange={(evt) => {
-              props.onMemeChange({ ...props.meme, text: evt.target.value });
+              props.onMemeChange({ ...props.meme, titre: evt.target.value });
             }}
           />
           <hr />
