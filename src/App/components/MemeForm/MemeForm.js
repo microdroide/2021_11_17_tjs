@@ -23,12 +23,23 @@ function MemeForm(props) {
             id="f_titre"
             placeholder="saisir titre"
             value={props.meme.titre}
+            onChange={(evt) => {
+              props.onMemeChange({ ...props.meme, text: evt.target.value });
+            }}
           />
           <hr />
         </div>
         <div>
           <h2>Image</h2>
-          <select value={props.meme.imageId}>
+          <select
+            value={props.meme.imageId}
+            onChange={(evt) => {
+              props.onMemeChange({
+                ...props.meme,
+                imageId: Number(evt.target.value),
+              });
+            }}
+          >
             <option value="-1">Aucune</option>
             {props.images.map((e, i) => (
               <option value={e.id}> {e.titre} </option>
@@ -38,7 +49,13 @@ function MemeForm(props) {
         </div>
         <div>
           <h2>text</h2>
-          <input type="text" value={props.meme.text} />
+          <input
+            type="text"
+            value={props.meme.text}
+            onChange={(evt) => {
+              props.onMemeChange({ ...props.meme, text: evt.target.value });
+            }}
+          />
           <div className={styles.half}>
             <div>
               <label htmlFor="f_x">x:</label>
@@ -47,6 +64,12 @@ function MemeForm(props) {
                 type="number"
                 className={styles.smallInput}
                 value={props.meme.x}
+                onChange={(evt) => {
+                  props.onMemeChange({
+                    ...props.meme,
+                    x: Number(evt.target.value),
+                  });
+                }}
               />
             </div>
             <div>
@@ -56,6 +79,12 @@ function MemeForm(props) {
                 type="number"
                 className={styles.smallInput}
                 value={props.meme.y}
+                onChange={(evt) => {
+                  props.onMemeChange({
+                    ...props.meme,
+                    y: Number(evt.target.value),
+                  });
+                }}
               />
             </div>
           </div>
