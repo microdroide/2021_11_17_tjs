@@ -31,18 +31,11 @@ class App extends React.Component {
       images: [
         {
           id: 0,
-          titre: "nom 1er meme",
-          text: "stop la triche",
-          x: 370,
-          y: 600,
-          fontSize: 27,
-          color: "tomato",
-          fontWeight: "900",
-          underline: true,
-          italic: true,
-          frameX: 0,
-          frameY: 0,
-        },
+          url: "img/meme1.jpg",
+          titre: "meme1",
+          h: 778,
+          w: 736,
+        }
       ],
     };
   }

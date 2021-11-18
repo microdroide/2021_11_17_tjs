@@ -18,12 +18,12 @@ function MemeForm(props) {
       <form>
         <div>
           <h1>Titre</h1>
-          <input type="text" id="f_titre" placeholder="saisir titre" />
+          <input type="text" id="f_titre" placeholder="saisir titre" value={props.meme.titre}/>
           <hr />
         </div>
         <div>
           <h2>Image</h2>
-          <select>
+          <select value={props.meme.imageId}>
             <option value="-1">Aucune</option>
             {props.images.map((e,i) => <option value={e.id}> { e.titre } </option>) }
           </select>
@@ -31,17 +31,17 @@ function MemeForm(props) {
         </div>
         <div>
           <h2>text</h2>
-          <input type="text" />
+          <input type="text" value={props.meme.text}/>
           <div className={styles.half}>
             <div>
               <label htmlFor="f_x">x:</label>
               <br />
-              <input type="number" className={styles.smallInput} />
+              <input type="number" className={styles.smallInput} value={props.meme.x} />
             </div>
             <div>
               <label htmlFor="f_y">y:</label>
               <br />
-              <input type="number" className={styles.smallInput} />
+              <input type="number" className={styles.smallInput} value={props.meme.y}/>
             </div>
           </div>
         </div>
