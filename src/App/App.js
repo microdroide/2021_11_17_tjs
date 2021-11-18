@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 import Button from "./components/Button/Button";
 import FlexLayout from "./components/FlexLayout/FlexLayout";
+import Header from "./components/Header/Header";
 import MemeViewer from "./components/MemeViewer/MemeViewer";
+
 
 class App extends React.Component {
   counter = 0;
@@ -27,6 +29,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
+        <Header/>
         <FlexLayout>
           <MemeViewer
             meme={{
