@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Button from "./components/Button/Button";
 import FlexLayout from "./components/FlexLayout/FlexLayout";
 import Header from "./components/Header/Header";
+import MemeForm from "./components/MemeForm/MemeForm";
 import MemeViewer from "./components/MemeViewer/MemeViewer";
 
 
@@ -53,7 +54,7 @@ class App extends React.Component {
               w: 736,
             }}
           />
-          Dans le flexlayout <br />
+          <MemeForm/>
         </FlexLayout>
       </div>
     );
