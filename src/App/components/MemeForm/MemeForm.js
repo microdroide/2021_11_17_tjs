@@ -25,6 +25,7 @@ function MemeForm(props) {
           <h2>Image</h2>
           <select>
             <option value="-1">Aucune</option>
+            {props.images.map((e,i) => <option value={e.id}> { e.titre } </option>) }
           </select>
           <hr />
         </div>
@@ -58,7 +59,10 @@ function MemeForm(props) {
 }
 
 MemeForm.propTypes = {
-
+  meme: PropTypes.object.isRequired,
+  images: PropTypes.array.isRequired,
+  onMemeChange: PropTypes.func.isRequired,
+  
 }
 
 MemeForm.defaultProps = {

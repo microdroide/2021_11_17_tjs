@@ -11,7 +11,40 @@ class App extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = { counter: 0, value2: 0 };
+    this.state = {
+
+      current: {
+        imageId: 0,
+        titre: "nom 1er meme",
+        text: "stop la triche",
+        x: 370,
+        y: 600,
+        fontSize: 27,
+        color: "tomato",
+        fontWeight: "900",
+        underline: true,
+        italic: true,
+        frameX: 0,
+        frameY: 0,
+      },
+
+      images: [
+        {
+          id: 0,
+          titre: "nom 1er meme",
+          text: "stop la triche",
+          x: 370,
+          y: 600,
+          fontSize: 27,
+          color: "tomato",
+          fontWeight: "900",
+          underline: true,
+          italic: true,
+          frameX: 0,
+          frameY: 0,
+        },
+      ],
+    };
   }
 
   /**
@@ -33,28 +66,15 @@ class App extends React.Component {
         <Header/>
         <FlexLayout>
           <MemeViewer
-            meme={{
-              titre: "nom 1er meme",
-              text: "stop la triche",
-              x: 370,
-              y: 600,
-              fontSize: 27,
-              color: "tomato",
-              fontWeight: "900",
-              underline: true,
-              italic: true,
-              frameX: 0,
-              frameY: 0,
-            }}
-            image={{
-              id: 0,
-              url: "img/meme1.jpg",
-              titre: "meme1",
-              h: 778,
-              w: 736,
-            }}
+              meme={ this.state.current } 
+              image={this.state.images.find((e) => e.id === this.state.current.imageId)}
+
           />
-          <MemeForm/>
+          <MemeForm meme={this.state.current} onMemeChange={(meme) => {
+            this.setState({ current: meme})
+          }}
+            images={ this.state.images}
+          />
         </FlexLayout>
       </div>
     );

@@ -17,7 +17,7 @@ const MemeViewer:React.FC<I_Props> = (props: I_Props) => {
     data-testid="MemeViewer"
     viewBox={`0 0 ${props.image?props.image.w:1000} ${props.image?props.image.h:1000}`}
   >
-
+  
     {props.image &&  <image href={props.image.url} x="0" y="0" /> }
     <text
       x={props.meme.x}
