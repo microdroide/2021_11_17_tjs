@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import style from "./Button.module.css"
 import PropTypes from 'prop-types'
 
@@ -13,6 +13,20 @@ import PropTypes from 'prop-types'
  */
 const Button = (props) => {
   const [clicked, setclicked] = useState({state: false,autreValue: 'Demat la bretagne'});
+  
+  
+  useEffect(() => {
+    // Execution que si etat du button clicked
+    if (! clicked.state) return;
+
+    console.log(clicked);
+    setTimeout( () => setclicked({...clicked, state: false}),300);
+    // retourne la fonction de WillUmount
+    //return () => {
+    //  cleanup
+    //}
+  }, [clicked]);
+
   console.log(props);
   return <button 
   className={ `${style.Button}${clicked.state?' '+style.clicked:''}` }
