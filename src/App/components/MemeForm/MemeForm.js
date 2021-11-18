@@ -49,6 +49,13 @@ function MemeForm(props) {
           <p>Decorations</p>
         </div>
 
+        <label htmlFor="f_color">Couleur</label><input type="color" id="f_color" value={props.meme.color} />
+      <div className={styles.half}>
+        <div><label htmlFor="f_underline">underline:</label><br /><input id="f_underline" type="checkbox" checked={props.meme.underline} /></div>
+        <div><label htmlFor="f_italic">italic:</label><br /><input id="f_italic" type="checkbox" checked={props.meme.italic} /></div>
+      </div>
+
+
         <div className={styles.half}>
           <Button type="reset" text="Clear" />
           <Button type="submit" text="Submit" />
