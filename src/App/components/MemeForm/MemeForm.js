@@ -48,7 +48,7 @@ function MemeForm(props) {
           <p>Decorations</p>
         </div>
 
-        <div className="{styles.half}">
+        <div className={styles.half}>
           <Button type="reset" text="Clear" />
           <Button type="submit" text="Submit" />
         </div>
