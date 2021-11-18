@@ -9,7 +9,9 @@ interface I_Props {
   image?: I_Image,
 }
 
-const MemeViewer = (props: I_Props) => (
+const MemeViewer:React.FC<I_Props> = (props: I_Props) => {
+  console.log(props);
+  return (
   <svg
     className={styles.MemeViewer}
     data-testid="MemeViewer"
@@ -30,7 +32,8 @@ const MemeViewer = (props: I_Props) => (
 
     
   </svg>
-);
+  );
+};
 
 // Remplacement par le type en ts
 /** 
