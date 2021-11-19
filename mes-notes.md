@@ -45,3 +45,5 @@ Les extensions chrome à installer:
 3. Installer l'extension chrome Redux DevTools
 
 Site github du formateur : https://github.com/champix56?tab=repositories
+
+Tel formateur : 06 64 27 63 60
