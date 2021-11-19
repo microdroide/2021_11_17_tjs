@@ -4,6 +4,7 @@ import Button from '../Button/Button';
 import styles from './MemeForm.module.scss'
 import { connect } from 'react-redux';
 import { CURRENT_PUBLIC_ACTIONS } from "../../../App/config/config";
+import { CURRENT_PUBLIC_ACTION } from '../../store/store';
 
 function MemeForm(props) {
  
@@ -140,7 +141,7 @@ function mapStateToProps(state,own){
 function mapDispatchToProps(dispatch)
 {
   return {
-    onMemeChange: (meme) => dispatch({type: CURRENT_PUBLIC_ACTIONS.UPDATE_CURRENT, value: meme})
+    onMemeChange: (meme) => dispatch({type: CURRENT_PUBLIC_ACTION.SAVE_MEME, value: meme})
 
   }
 }
