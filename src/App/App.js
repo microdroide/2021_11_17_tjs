@@ -4,6 +4,8 @@ import FlexLayout from "./components/FlexLayout/FlexLayout";
 import Header from "./components/Header/Header";
 import MemeForm from "./components/MemeForm/MemeForm";
 import MemeViewer from "./components/MemeViewer/MemeViewer";
+import { REST_ADR, REST_RESSOURCES } from "./config/config";
+import store from './store/store';
 
 
 class App extends React.Component {
@@ -47,6 +49,12 @@ class App extends React.Component {
     };
   }
 
+  componentDidMount() {
+    fetch(`${REST_ADR}${REST_RESSOURCES.images}`)
+      .then(f => f.json())
+      .then(arr=>this.setState({images:arr}));
+  }
+
   /**
    * Cycle de vie avec didUpdate
    */
@@ -56,8 +64,7 @@ class App extends React.Component {
       "%c%s",
       "color:red",
       "le changement est pret et effectif",
-      this.state.counter
-    );
+      JSON.stringify(this.state));
   }
 
   render() {

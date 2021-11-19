@@ -26,3 +26,15 @@ Utiliser nvm s'il y a plusieurs versions de node
 
 Ajouter l'extension chrome : React Developer Tools
 Voir components dans la console de dev de chrome.
+
+
+Pour rendre une constante vraiment constante (sans modif):
+
+> const a=Object.seal({a:254})
+> a
+> delete a.a   -------------> false
+> a.a=12345
+> a
+
+Pas d'ajout de champ, de delete, de modif. C'est vraiment constant :
+> const a= Object.freeze({a.254});
