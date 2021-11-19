@@ -2,17 +2,11 @@ import React, { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
 import Button from '../Button/Button';
 import styles from './MemeForm.module.scss'
+import { connect } from 'react-redux';
 
-const initialState={};
+
 function MemeForm(props) {
-  const [state, setstate] = useState(initialState);
-  useEffect(() => {
-    // didMount + didUpdate
-    return () => {
-      // will umount
-    };
-  }, [state]);
-
+ 
   return (
     <div data-testid="MemeForm">
       <form>
@@ -136,6 +130,16 @@ MemeForm.propTypes = {
 MemeForm.defaultProps = {
 
 }
-
-export default MemeForm
+function mapStateToProps(state,own){
+  return {
+    ...own,
+    meme:state.current,
+    images:state.ressources.images
+  }
+}
+function mapDispatchToProps(dispatch)
+{
+  return {}
+}
+export default connect(mapStateToProps,mapDispatchToProps)(MemeForm);
 

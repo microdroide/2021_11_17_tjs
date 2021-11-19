@@ -10,45 +10,6 @@ import store from './store/store';
 
 
 class App extends React.Component {
-  counter = 0;
-
-  constructor(props) {
-    super(props);
-    this.state = {
-
-      current: {
-        imageId: 0,
-        titre: "nom 1er meme",
-        text: "stop la triche",
-        x: 370,
-        y: 600,
-        fontSize: 27,
-        color: "tomato",
-        fontWeight: "900",
-        underline: true,
-        italic: true,
-        frameX: 0,
-        frameY: 0,
-      },
-
-      images: [
-        {
-          id: 0,
-          url: "img/meme1.jpg",
-          titre: "meme1",
-          h: 778,
-          w: 736,
-        },
-        {
-          id: 1,
-          url: "img/camera.png",
-          titre: "camera",
-          h: 768,
-          w: 922,
-        }
-      ],
-    };
-  }
 
   componentDidMount() {
     fetch(`${REST_ADR}${REST_RESSOURCES.images}`)
@@ -65,7 +26,7 @@ class App extends React.Component {
       "%c%s",
       "color:red",
       "le changement est pret et effectif",
-      JSON.stringify(this.state));
+      JSON.stringify(this.props));
   }
 
   render() {
@@ -79,18 +40,14 @@ class App extends React.Component {
             />
 
 
-          {/** 
-          <MemeViewer
-              meme={ this.state.current } 
-              image={this.state.images.find((e) => e.id === this.state.current.imageId)}
-
+          
+          <MemeForm 
+          // meme={this.state.current} onMemeChange={(meme) => {
+          //   this.setState({ current: meme})
+          // }}
+          //   images={ this.state.images}
           />
-          <MemeForm meme={this.state.current} onMemeChange={(meme) => {
-            this.setState({ current: meme})
-          }}
-            images={ this.state.images}
-          />
-          */}
+ 
         </FlexLayout>
       </div>
     );
@@ -109,5 +66,6 @@ function mapDispatchToProps(dispatch)
   return {}
 }
 export default connect(mapStateToProps,mapDispatchToProps)(App);
+
 
 
