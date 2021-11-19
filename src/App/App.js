@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
 import Button from "./components/Button/Button";
 import FlexLayout from "./components/FlexLayout/FlexLayout";
 import Header from "./components/Header/Header";
@@ -72,6 +73,13 @@ class App extends React.Component {
       <div className="App">
         <Header/>
         <FlexLayout>
+        <MemeViewer
+              meme={this.props.current}
+              image={this.props.images.find((e) => e.id === this.props.current.imageId)}
+            />
+
+
+          {/** 
           <MemeViewer
               meme={ this.state.current } 
               image={this.state.images.find((e) => e.id === this.state.current.imageId)}
@@ -82,10 +90,24 @@ class App extends React.Component {
           }}
             images={ this.state.images}
           />
+          */}
         </FlexLayout>
       </div>
     );
   }
 }
 
-export default App;
+function mapStateToProps(state,own){
+  return {
+    ...own,
+    current:state.current,
+    images:state.ressources.images
+  }
+}
+function mapDispatchToProps(dispatch)
+{
+  return {}
+}
+export default connect(mapStateToProps,mapDispatchToProps)(App);
+
+
