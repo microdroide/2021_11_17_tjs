@@ -104,11 +104,14 @@ const currentReducer = (state = currentInitialState, action) => {
     }
 };
 
-const store = createStore(combineReducers({current: currentReducer, ressources: ressourceReducer}));
-store.subscribe( () => {
+const store = createStore(
+    combineReducers({ current: currentReducer, ressources: ressourceReducer }),
+    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+);
+store.subscribe(() => {
     console.log(store.getState());
-})
-store.dispatch({ type: 'INIT'});
+});
+store.dispatch({ type: "INIT" });
 
 // store.dispatch({ type:RESSOURCES_PUBLIC_ACTIONS.REPLACE_IMAGES_LIST, values: [{ id: 0 }, { id: 1 }] })
 // store.dispatch({ type:RESSOURCES_PUBLIC_ACTIONS.REPLACE_MEMES_LIST, values: [{ id: 10 }, { id: 11 }] })
