@@ -38,3 +38,10 @@ Pour rendre une constante vraiment constante (sans modif):
 
 Pas d'ajout de champ, de delete, de modif. C'est vraiment constant :
 > const a= Object.freeze({a.254});
+
+Les extensions chrome à installer:
+1. Installer l'extension chrome Yet Another REST Client
+2. Installer l'extension chrome React Developer Tools
+3. Installer l'extension chrome Redux DevTools
+
+Site github du formateur : https://github.com/champix56?tab=repositories
