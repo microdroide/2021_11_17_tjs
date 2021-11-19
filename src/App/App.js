@@ -4,6 +4,7 @@ import Header from "./components/Header/Header";
 import MemeThumbnail from "./components/MemeThumbnail/MemeThumbnail";
 
 import { BrowserRouter as Router, Route, NavLink, Switch } from 'react-router-dom'
+import Navbar from "./components/Navbar/Navbar";
   
 
 
@@ -20,6 +21,7 @@ class App extends React.Component {
     return (
       <>
         <Header />
+        <Navbar/>
         <div className="App">
           <Switch>
             <Route path="/" exact>
