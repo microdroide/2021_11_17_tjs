@@ -2,6 +2,11 @@ import React from "react";
 import { connect } from "react-redux";
 import Header from "./components/Header/Header";
 import MemeThumbnail from "./components/MemeThumbnail/MemeThumbnail";
+
+import { BrowserRouter as Router, Route, NavLink, Switch } from 'react-router-dom'
+  
+
+
 class App extends React.Component {
   componentDidUpdate() {
     console.log(
@@ -16,6 +21,24 @@ class App extends React.Component {
       <>
         <Header />
         <div className="App">
+          <Switch>
+            <Route path="/" exact>
+              <h1>Bonjour et bienvenue</h1>
+              Voici le nouveau generateur de la version 2021
+        
+            </Route>
+            <Route path="/thumbnail">
+              <h1>thumbnail</h1>
+              <MemeThumbnail/>
+            </Route>
+            <Route path="/edit">
+              <h1>Edit</h1>
+            </Route>
+
+          </Switch>
+
+
+
           <MemeThumbnail/>
           {/* <FlexLayout>
             <MemeViewer
