@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import Button from '../Button/Button';
 import styles from './MemeForm.module.scss'
 import { connect } from 'react-redux';
-
+import { CURRENT_PUBLIC_ACTIONS } from "../../../App/config/config";
 
 function MemeForm(props) {
  
@@ -139,7 +139,10 @@ function mapStateToProps(state,own){
 }
 function mapDispatchToProps(dispatch)
 {
-  return {}
+  return {
+    onMemeChange: (meme) => dispatch({type: CURRENT_PUBLIC_ACTIONS.UPDATE_CURRENT, value: meme})
+
+  }
 }
 export default connect(mapStateToProps,mapDispatchToProps)(MemeForm);
-
+export const unConnectedMemeForm=MemeForm;

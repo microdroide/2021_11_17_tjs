@@ -83,7 +83,7 @@ const currentInitialState = {
         "frameY": 0
 };
 
-const CURRENT_PUBLIC_ACTION = Object.freeze({
+export const CURRENT_PUBLIC_ACTION = Object.freeze({
     UPDATE_CURRENT: 'UPDATE_CURRENT',
     CLEAR_MEME: 'CLEAR_MEME',
     SAVE_MEME: 'SAVE_MEME',
